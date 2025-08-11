@@ -38,22 +38,22 @@ const Testimonial: React.FC = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="bg-gray-50 py-12">
+    <section id="testimonials" className="bg-gray-50 py-2">
       <div className="max-w-3xl mx-auto text-center px-6">
-        <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 text-center mb-10">
+        <h2 className="hidden text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 text-center mb-10">
           Testimonials
         </h2>
 
         <div
-          className="bg-white p-12 rounded-lg shadow-lg transition-all duration-500 ease-in-out"
+          className="p-10 rounded-lg transition-all duration-500 ease-in-out"
           key={index} // key ensures animation reset when changing
         >
           <img
-            className="w-25 h-25 rounded-full object-cover mb-5 mx-auto border-4 border-emerald-500"
+            className="w-30 h-30 rounded-full object-cover mb-5 mx-auto border-4 border-emerald-500"
             src={testimonials[index].image}
             alt={testimonials[index].name}
           />
-          <p className="text-lg text-gray-700 italic mb-6">
+          <p className="text-2xl italic text-[#333] mb-6">
             “{testimonials[index].quote}”
           </p>
           <h3 className="text-xl font-semibold">{testimonials[index].name}</h3>

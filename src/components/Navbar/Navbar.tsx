@@ -1,19 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { scrollToSection } from "../../utils/scrollToSection";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasShadow, setHasShadow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setHasShadow(true);
+      } else {
+        setHasShadow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-white w-full z-50 shadow sticky top-0 left-0">
-      <div className="mx-auto px-4 md:px-12 py-5 flex items-center justify-between">
+    <nav
+      className={`bg-white w-full z-50 sticky top-0 left-0 transition-shadow duration-300 ${
+        hasShadow ? "shadow" : ""
+      }`}
+    >
+      <div className="mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="text-3xl font-bold text-emerald-700 italic">
           Pesalens
         </div>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-medium">
+        <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-small">
           <li>
             <a href="#home" className="hover:text-emerald-700 hover:underline">
               Home
@@ -51,7 +70,7 @@ const Navbar: React.FC = () => {
               Contact
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href="#login"
               className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4 py-2 rounded inline-flex items-center"
@@ -66,7 +85,7 @@ const Navbar: React.FC = () => {
             >
               Sign Up
             </a>
-          </li>
+          </li> */}
         </ul>
 
         {/* Mobile Menu Button */}

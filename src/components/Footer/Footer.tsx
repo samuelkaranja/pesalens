@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <section className="bg-emerald-600 px-20 py-5 text-white mt-5">
+    <section className="bg-emerald-600 px-20 py-5 text-white">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Logo */}
         <div className="text-2xl font-bold italic">pesalens</div>
@@ -28,7 +28,8 @@ const Footer: React.FC = () => {
       </div>
       <div>
         <p className="text-left mt-4 text-md">
-          &copy; {new Date().getFullYear()} pesalens. All rights reserved.
+          Copyright &copy; {new Date().getFullYear()} pesalens <br /> All rights
+          reserved
         </p>
       </div>
     </section>

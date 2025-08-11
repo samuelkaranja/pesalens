@@ -6,22 +6,22 @@ const WhyChooseUs: React.FC = () => {
     {
       title: "Fast & Accurate Analysis",
       description: "Get your breakdown in seconds",
-      icon: <FiZap className="w-8 h-8 text-emerald-600" />,
+      icon: <FiZap className="w-10 h-10 text-emerald-600" />,
     },
     {
       title: "Tailored for M-Pesa",
       description: "Built specifically for Kenyan mobile payments",
-      icon: <FiSliders className="w-8 h-8 text-emerald-600" />,
+      icon: <FiSliders className="w-10 h-10 text-emerald-600" />,
     },
     {
       title: "Bank-Level Security",
       description: "Your data is encrypted end-to-end",
-      icon: <FiShield className="w-8 h-8 text-emerald-600" />,
+      icon: <FiShield className="w-10 h-10 text-emerald-600" />,
     },
     {
       title: "Clear, Actionable Insights",
       description: "Understand your spending at a glance",
-      icon: <FiEye className="w-8 h-8 text-emerald-600" />,
+      icon: <FiEye className="w-10 h-10 text-emerald-600" />,
     },
   ];
 
@@ -35,17 +35,15 @@ const WhyChooseUs: React.FC = () => {
           Discover the benefits that make our M-Pesa statement analysis <br />{" "}
           the smartest way to track and manage your spending.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {benefits.map(({ title, description, icon }, idx) => (
             <div
               key={idx}
-              className="bg-white flex-shrink-0 w-full sm:w-72 rounded-lg shadow-md p-8"
+              className="bg-white flex-shrink-0 w-full sm:w-72 rounded-lg shadow-md py-12 px-8"
             >
-              <div className="mb-8 flex justify-center">{icon}</div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {title}
-              </h3>
-              <p className="text-gray-600">{description}</p>
+              <div className="mb-5 flex ">{icon}</div>
+              <h3 className="text-lg font-semibold text-black mb-2">{title}</h3>
+              <p className="text-sm text-[#333]">{description}</p>
             </div>
           ))}
         </div>

@@ -9,19 +9,19 @@ const Hero: React.FC = () => {
         {/* Left Content */}
         <div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Track, Understand & Take Control of Your{" "}
+            Track, Understand and Take Control of Your{" "}
             <br className="hidden sm:block" /> M-pesa Spending
           </h1>
-          <p className="mt-4 text-gray-600 text-base sm:text-lg lg:text-xl max-w-lg mx-auto md:mx-0">
+          <p className="mt-4 text-[#333] text-base sm:text-lg lg:text-lg max-w-lg mx-auto md:mx-0">
             Upload your M-pesa statements and instantly see a detailed breakdown
             of your expenses.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button className="px-6 py-3 bg-emerald-600 text-white rounded-lg shadow-md hover:bg-emerald-700 transition">
+            <button className="px-12 py-3 bg-emerald-600 text-white text-md rounded-sm shadow-md hover:bg-emerald-700 transition">
               Get Started
             </button>
             <button
-              className="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg shadow-md hover:bg-gray-200 transition"
+              className="px-12 py-3 text-emerald-600 text-md border border-emerald-600 rounded-sm shadow-md hover:bg-gray-200 transition"
               onClick={() => scrollToSection("how-it-works")}
             >
               See How It Works

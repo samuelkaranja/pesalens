@@ -22,3 +22,18 @@ body {
   min-width: 320px;
   min-height: 100vh; */
 }
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-in-out;
+}
