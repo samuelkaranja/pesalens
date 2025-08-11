@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white w-full z-50 shadow sticky top-0 left-0">
-      <div className="container mx-auto px-3 py-5 flex items-center justify-between">
+      <div className="mx-auto px-4 md:px-12 py-5 flex items-center justify-between">
         {/* Logo */}
         <div className="text-3xl font-bold text-emerald-700 italic">
           Pesalens
@@ -20,31 +20,27 @@ const Navbar: React.FC = () => {
             </a>
           </li>
           <li onClick={() => scrollToSection("how-it-works")}>
-            <a href="#how" className="hover:text-emerald-700 hover:underline">
+            <a
+              href="#how-it-works"
+              className="hover:text-emerald-700 hover:underline"
+            >
               How It Works
             </a>
           </li>
-          <li>
+          <li onClick={() => scrollToSection("why-choose-us")}>
             <a
-              href="#features"
+              href="#why-choose-us"
               className="hover:text-emerald-700 hover:underline"
             >
-              Features
+              Why Choose Us
             </a>
           </li>
-          <li>
+          <li onClick={() => scrollToSection("testimonials")}>
             <a
-              href="#features"
+              href="#testimonials"
               className="hover:text-emerald-700 hover:underline"
             >
-              <li onClick={() => scrollToSection("testimonials")}>
-                <a
-                  href="#features"
-                  className="hover:text-emerald-700 hover:underline"
-                >
-                  Testimonials
-                </a>
-              </li>
+              Testimonials
             </a>
           </li>
           <li>
@@ -57,7 +53,7 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <a
-              href="#signup"
+              href="#login"
               className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4 py-2 rounded inline-flex items-center"
             >
               Login
@@ -132,6 +128,14 @@ const Navbar: React.FC = () => {
             <li>
               <a href="#contact" className="block text-lg">
                 Contact
+              </a>
+            </li>
+            <li>
+              <a
+                href="#login"
+                className="block bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded"
+              >
+                Login
               </a>
             </li>
             <li>
