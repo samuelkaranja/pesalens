@@ -1,5 +1,6 @@
 import React from "react";
 import finance from "../../assets/finance.svg";
+import { scrollToSection } from "../../utils/scrollToSection";
 
 const Hero: React.FC = () => {
   return (
@@ -19,7 +20,10 @@ const Hero: React.FC = () => {
             <button className="px-6 py-3 bg-emerald-600 text-white rounded-lg shadow-md hover:bg-emerald-700 transition">
               Get Started
             </button>
-            <button className="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg shadow-md hover:bg-gray-200 transition">
+            <button
+              className="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg shadow-md hover:bg-gray-200 transition"
+              onClick={() => scrollToSection("how-it-works")}
+            >
               See How It Works
             </button>
           </div>

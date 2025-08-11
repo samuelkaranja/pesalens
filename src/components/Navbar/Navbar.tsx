@@ -4,12 +4,10 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white w-full z-50 shadow-md">
-      <div className="container mx-auto px-3 py-4 flex items-center justify-between">
+    <nav className="bg-white w-full z-50 shadow sticky top-0 left-0">
+      <div className="container mx-auto px-3 py-5 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-emerald-700 font-stretch-wide">
-          Pesalens
-        </div>
+        <div className="text-3xl font-bold text-emerald-700">Pesalens</div>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-medium">
