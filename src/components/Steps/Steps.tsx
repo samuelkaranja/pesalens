@@ -4,7 +4,7 @@ const Steps: React.FC = () => {
   return (
     <section id="how-it-works" className="bg-white py-8 md:py-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 text-center mb-12">
           How It Works
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

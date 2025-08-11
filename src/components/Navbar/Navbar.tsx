@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { scrollToSection } from "../../utils/scrollToSection";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,34 +8,57 @@ const Navbar: React.FC = () => {
     <nav className="bg-white w-full z-50 shadow sticky top-0 left-0">
       <div className="container mx-auto px-3 py-5 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-3xl font-bold text-emerald-700">Pesalens</div>
+        <div className="text-3xl font-bold text-emerald-700 italic">
+          Pesalens
+        </div>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-medium">
           <li>
-            <a href="#home" className="hover:text-emerald-700">
+            <a href="#home" className="hover:text-emerald-700 hover:underline">
               Home
             </a>
           </li>
-          <li>
-            <a href="#how" className="hover:text-emerald-700">
+          <li onClick={() => scrollToSection("how-it-works")}>
+            <a href="#how" className="hover:text-emerald-700 hover:underline">
               How It Works
             </a>
           </li>
           <li>
-            <a href="#features" className="hover:text-emerald-700">
+            <a
+              href="#features"
+              className="hover:text-emerald-700 hover:underline"
+            >
               Features
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-emerald-700">
+            <a
+              href="#features"
+              className="hover:text-emerald-700 hover:underline"
+            >
+              <li onClick={() => scrollToSection("testimonials")}>
+                <a
+                  href="#features"
+                  className="hover:text-emerald-700 hover:underline"
+                >
+                  Testimonials
+                </a>
+              </li>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="hover:text-emerald-700 hover:underline"
+            >
               Contact
             </a>
           </li>
-          {/* <li>
+          <li>
             <a
               href="#signup"
-              className="bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 inline-flex items-center"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4 py-2 rounded inline-flex items-center"
             >
               Login
             </a>
@@ -42,11 +66,11 @@ const Navbar: React.FC = () => {
           <li>
             <a
               href="#signup"
-              className="bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 inline-flex items-center"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4 py-2 rounded inline-flex items-center"
             >
               Sign Up
             </a>
-          </li> */}
+          </li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -110,14 +134,14 @@ const Navbar: React.FC = () => {
                 Contact
               </a>
             </li>
-            {/* <li>
+            <li>
               <a
                 href="#signup"
-                className="block bg-blue-600 text-white text-center py-2 rounded hover:bg-blue-700"
+                className="block bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded"
               >
                 Sign Up
               </a>
-            </li> */}
+            </li>
           </ul>
         </div>
       )}
