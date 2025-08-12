@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import UploadStatement from "./pages/UploadStatement/UploadStatement";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      <ToastContainer />
     </>
   );
 }

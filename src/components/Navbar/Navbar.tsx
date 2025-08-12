@@ -66,12 +66,12 @@ const Navbar: React.FC = () => {
               Testimonials
             </a>
           </li>
-          <li>
+          <li onClick={() => scrollToSection("footer")}>
             <a
               href="#contact"
               className="hover:text-emerald-700 hover:underline"
             >
-              Contact
+              Contact Us
             </a>
           </li>
           {/* <li>

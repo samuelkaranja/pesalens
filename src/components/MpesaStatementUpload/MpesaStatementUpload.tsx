@@ -5,6 +5,7 @@ import {
   FiArrowRight,
   FiArrowLeft,
 } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 const MpesaStatementUpload: React.FC = () => {
   const [step, setStep] = useState<1 | 2>(1);
@@ -19,7 +20,15 @@ const MpesaStatementUpload: React.FC = () => {
 
   const handleNext = () => {
     if (!file) {
-      alert("Please upload your M-Pesa statement file first.");
+      toast.error("Please upload your M-Pesa statement file first.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return;
     }
     setStep(2);
@@ -30,7 +39,15 @@ const MpesaStatementUpload: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!code.trim()) {
-      alert("Please enter the statement code.");
+      toast.error("Please enter the statement code.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return;
     }
     console.log("File:", file);
