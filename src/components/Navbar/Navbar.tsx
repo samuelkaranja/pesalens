@@ -28,9 +28,12 @@ const Navbar: React.FC = () => {
     >
       <div className="mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-3xl font-bold text-emerald-700 italic">
+        <Link
+          to="/"
+          className="text-3xl font-bold text-emerald-900 italic underline"
+        >
           Pesalens
-        </div>
+        </Link>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-small">

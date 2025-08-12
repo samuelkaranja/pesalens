@@ -24,7 +24,7 @@ const Steps: React.FC = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-16">
+    <section id="how-it-works" className="bg-gray-50 py-20">
       <div className="container mx-auto px-6 md:px-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           How It Works
