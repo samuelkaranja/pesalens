@@ -1,6 +1,7 @@
 import React from "react";
 import finance from "../../assets/finance.svg";
 import { scrollToSection } from "../../utils/scrollToSection";
+import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   return (
@@ -17,9 +18,12 @@ const Hero: React.FC = () => {
             of your expenses.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button className="px-12 py-3 bg-emerald-600 text-white text-md rounded-sm shadow-md hover:bg-emerald-700 transition">
+            <Link
+              to="/upload-statement"
+              className="px-12 py-3 bg-emerald-600 text-white text-md rounded-sm shadow-md hover:bg-emerald-700 transition"
+            >
               Get Started
-            </button>
+            </Link>
             <button
               className="px-12 py-3 text-emerald-600 text-md border border-emerald-600 rounded-sm shadow-md hover:bg-gray-200 transition"
               onClick={() => scrollToSection("how-it-works")}

@@ -1,81 +1,62 @@
 import React from "react";
+import { FaFileUpload, FaSearchDollar, FaFilePdf } from "react-icons/fa";
 
 const Steps: React.FC = () => {
+  const steps = [
+    {
+      icon: <FaFileUpload className="text-emerald-600 text-4xl" />,
+      title: "Upload Your Statement",
+      description:
+        "Securely upload your M-Pesa statement in PDF or CSV format. Your data stays private and is processed safely.",
+    },
+    {
+      icon: <FaSearchDollar className="text-emerald-600 text-4xl" />,
+      title: "Automatic Analysis",
+      description:
+        "Our tool categorizes your transactions, detects recurring payments, and highlights your top spending areas.",
+    },
+    {
+      icon: <FaFilePdf className="text-emerald-600 text-4xl" />,
+      title: "Download PDF Breakdown",
+      description:
+        "Get a detailed, beautifully designed PDF with charts, trends, spending tips, and a financial health score.",
+    },
+  ];
+
   return (
-    <section id="how-it-works" className="bg-gray-50 py-8 md:py-12">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
-        <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 text-center mb-12">
+    <section className="bg-gray-50 py-16">
+      <div className="container mx-auto px-6 md:px-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           How It Works
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white p-10 rounded-lg shadow-md text-center">
-            <div className="flex justify-center mb-4">
-              <h2 className="flex items-center justify-center w-12 h-12 border-2 border-emerald-700 rounded-full text-lg text-emerald-600 font-bold">
-                1
-              </h2>
+        <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
+          Understand your spending habits, track your cash flow, and take
+          control of your finances—without manually crunching numbers.
+        </p>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
+            >
+              {/* Icon + Badge Container */}
+              <div className="relative flex justify-center mb-4">
+                {/* <span className="absolute -top-3 -right-3 bg-emerald-600 text-white text-sm font-bold w-8 h-8 flex items-center justify-center rounded-full shadow-lg animate-bounce">
+                  {index + 1}
+                </span> */}
+                {step.icon}
+              </div>
+
+              {/* Step Title */}
+              <h3 className="text-lg font-semibold text-[#333]">
+                {step.title}
+              </h3>
+
+              {/* Step Description */}
+              <p className="mt-2 text-gray-600 text-sm">{step.description}</p>
             </div>
-            <h3 className="text-xl font-semibold mb-4">
-              Upload Your Statement
-            </h3>
-            <p className="text-black-600">
-              Easily upload your M-pesa statement in PDF format.
-            </p>
-          </div>
-          <div className="bg-white p-10 rounded-lg shadow-md text-center">
-            <div className="flex justify-center mb-4">
-              <h2 className="flex items-center justify-center w-12 h-12 border-2 border-emerald-700 rounded-full text-lg text-emerald-600 font-bold">
-                2
-              </h2>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">We Analyze it</h3>
-            <p className="text-black-600">
-              Our system automatically analyzes your statement.
-            </p>
-          </div>
-          <div className="bg-white p-10 rounded-lg shadow-md text-center">
-            <div className="flex justify-center mb-4">
-              <h2 className="flex items-center justify-center w-12 h-12 border-2 border-emerald-700 rounded-full text-lg text-emerald-600 font-bold">
-                3
-              </h2>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">Take Control</h3>
-            <p className="text-black-600">
-              Make informed decisions to manage your finances better.
-            </p>
-          </div>
-          <div className="bg-white p-10 rounded-lg shadow-md text-center">
-            <div className="flex justify-center mb-4">
-              <h2 className="flex items-center justify-center w-12 h-12 border-2 border-emerald-700 rounded-full text-lg text-emerald-600 font-bold">
-                4
-              </h2>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">We Analyze it</h3>
-            <p className="text-black-600">
-              Our system automatically analyzes your statement.
-            </p>
-          </div>
-          <div className="bg-white p-10 rounded-lg shadow-md text-center">
-            <div className="flex justify-center mb-4">
-              <h2 className="flex items-center justify-center w-12 h-12 border-2 border-emerald-700 rounded-full text-lg text-emerald-600 font-bold">
-                5
-              </h2>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">Take Control</h3>
-            <p className="text-black-600">
-              Make informed decisions to manage your finances better.
-            </p>
-          </div>
-          <div className="bg-white p-10 rounded-lg shadow-md text-center">
-            <div className="flex justify-center mb-4">
-              <h2 className="flex items-center justify-center w-12 h-12 border-2 border-emerald-700 rounded-full text-lg text-emerald-600 font-bold">
-                6
-              </h2>
-            </div>
-            <h3 className="text-xl font-semibold mb-4">Take Control</h3>
-            <p className="text-black-600">
-              Make informed decisions to manage your finances better.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>

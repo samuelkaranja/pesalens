@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { scrollToSection } from "../../utils/scrollToSection";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +35,9 @@ const Navbar: React.FC = () => {
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-small">
           <li>
-            <a href="#home" className="hover:text-emerald-700 hover:underline">
+            <Link to="/" className="hover:text-emerald-700 hover:underline">
               Home
-            </a>
+            </Link>
           </li>
           <li onClick={() => scrollToSection("how-it-works")}>
             <a

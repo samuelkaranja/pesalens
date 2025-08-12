@@ -31,7 +31,7 @@ const WhyChooseUs: React.FC = () => {
         <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 text-center mb-5">
           Why Choose Us?
         </h2>
-        <p className="text-sm sm:text-xl lg:text-lg text-gray-700 text-center mb-12">
+        <p className="mt-4 text-gray-700 max-w-2xl mx-auto text-center mb-12">
           Discover the benefits that make our M-Pesa statement analysis <br />{" "}
           the smartest way to track and manage your spending.
         </p>
