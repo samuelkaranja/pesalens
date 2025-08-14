@@ -26,7 +26,7 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="bg-white py-8 md:py-12 lg:py-25">
+    <section id="why-choose-us" className="bg-white py-8 md:py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
         <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 text-center mb-5">
           Why Choose Us?

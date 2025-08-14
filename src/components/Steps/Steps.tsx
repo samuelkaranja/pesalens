@@ -27,7 +27,7 @@ const Steps: React.FC = () => {
   return (
     <section
       id="how-it-works"
-      className="bg-gray-50 py-25"
+      className="bg-gray-50 py-20"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
