@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { scrollToSection } from "../../utils/scrollToSection";
 import { Link } from "react-router-dom";
+import { FiLogIn } from "react-icons/fi";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,14 +39,17 @@ const Navbar: React.FC = () => {
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-small">
           <li>
-            <Link to="/" className="hover:text-emerald-700 hover:underline">
+            <Link
+              to="/"
+              className="hover:text-emerald-700 hover:underline text-sm"
+            >
               Home
             </Link>
           </li>
           <li onClick={() => scrollToSection("how-it-works")}>
             <a
               href="#how-it-works"
-              className="hover:text-emerald-700 hover:underline"
+              className="hover:text-emerald-700 hover:underline text-sm"
             >
               How It Works
             </a>
@@ -53,7 +57,7 @@ const Navbar: React.FC = () => {
           <li onClick={() => scrollToSection("why-choose-us")}>
             <a
               href="#why-choose-us"
-              className="hover:text-emerald-700 hover:underline"
+              className="hover:text-emerald-700 hover:underline text-sm"
             >
               Why Choose Us
             </a>
@@ -61,7 +65,7 @@ const Navbar: React.FC = () => {
           <li onClick={() => scrollToSection("testimonials")}>
             <a
               href="#testimonials"
-              className="hover:text-emerald-700 hover:underline"
+              className="hover:text-emerald-700 hover:underline text-sm"
             >
               Testimonials
             </a>
@@ -69,27 +73,20 @@ const Navbar: React.FC = () => {
           <li onClick={() => scrollToSection("footer")}>
             <a
               href="#contact"
-              className="hover:text-emerald-700 hover:underline"
+              className="hover:text-emerald-700 hover:underline text-sm"
             >
               Contact Us
             </a>
           </li>
-          {/* <li>
-            <a
-              href="#login"
-              className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4 py-2 rounded inline-flex items-center"
-            >
-              Login
-            </a>
-          </li>
           <li>
-            <a
-              href="#signup"
-              className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4 py-2 rounded inline-flex items-center"
+            <Link
+              to="/login"
+              className="flex items-center space-x-1 hover:text-emerald-700 text-sm"
             >
-              Sign Up
-            </a>
-          </li> */}
+              <FiLogIn className="w-5 h-5" />
+              <span>Login</span>
+            </Link>
+          </li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -154,20 +151,13 @@ const Navbar: React.FC = () => {
               </a>
             </li>
             <li>
-              <a
-                href="#login"
-                className="block bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded"
+              <Link
+                to="/login"
+                className="flex items-center space-x-1 hover:text-emerald-700 text-sm"
               >
-                Login
-              </a>
-            </li>
-            <li>
-              <a
-                href="#signup"
-                className="block bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 rounded"
-              >
-                Sign Up
-              </a>
+                <FiLogIn className="w-5 h-5" />
+                <span>Login</span>
+              </Link>
             </li>
           </ul>
         </div>

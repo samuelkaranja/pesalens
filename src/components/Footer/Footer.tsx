@@ -88,10 +88,10 @@ const Footer: React.FC = () => {
             <li className="flex items-center gap-2">
               <FiMail size={18} />
               <a
-                href="mailto:support@pesalens.com"
+                href="mailto:pesalens@gmail.com"
                 className="hover:text-emerald-300"
               >
-                support@pesalens.com
+                pesalens@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-2">
