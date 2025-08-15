@@ -56,7 +56,7 @@ const MpesaStatementUpload: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[85vh] bg-gray-50 flex items-center justify-center px-4">
+    <div className="min-h-[80vh] md:min-h-[85vh] lg:min-h-[85vh] bg-gray-50 flex items-center justify-center px-4">
       <div className="w-full max-w-2xl h-full">
         {/* Progress Bar */}
         <div className="mb-6">
