@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FormInput from "../../components/FormInput/FormInput";
 import { Link } from "react-router-dom";
 
@@ -16,6 +16,13 @@ const Login: React.FC = () => {
     e.preventDefault();
     console.log("Login Data:", formData);
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <div className="min-h-[80vh] md:min-h-[85vh] lg:min-h-[85vh] flex items-center justify-center bg-gray-50 px-4">
@@ -47,10 +54,20 @@ const Login: React.FC = () => {
             Login
           </button>
         </form>
+        <div className="mt-4 flex justify-between items-center">
+          <Link to="" className="text-sm text-emerald-600 hover:underline">
+            Forgot Password
+          </Link>
+
+          <Link to="" className="text-sm text-emerald-600 hover:underline">
+            Need Help?
+          </Link>
+        </div>
+
         <p className="mt-4 text-sm text-gray-600 text-center">
           Don’t have an account?{" "}
-          <Link to="/signup" className="text-emerald-600 hover:underline">
-            Sign up
+          <Link to="/signup" className="text-emerald-600 underline">
+            Sign Up
           </Link>
         </p>
       </div>

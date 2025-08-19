@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const SignUp: React.FC = () => {
   const [formData, setFormData] = useState({
+    fullname: "",
     email: "",
     phone: "",
     password: "",
@@ -20,12 +21,20 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[80vh] md:min-h-[85vh] lg:min-h-[85vh] flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-[90vh] md:min-h-[85vh] lg:min-h-[85vh] flex items-center justify-center bg-gray-50 px-4">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold text-emerald-600 mb-6 text-center">
           Create Account
         </h2>
         <form onSubmit={handleSubmit}>
+          <FormInput
+            label="Full Name"
+            name="name"
+            type="text"
+            value={formData.fullname}
+            onChange={handleChange}
+            required
+          />
           <FormInput
             label="Email"
             name="email"
