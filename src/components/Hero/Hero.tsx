@@ -1,5 +1,6 @@
 import React from "react";
-import finance from "../../assets/finance.svg";
+//import finance from "../../assets/finance.svg";
+import type from "../../assets/typing.jpg";
 import { scrollToSection } from "../../utils/scrollToSection";
 import { Link } from "react-router-dom";
 
@@ -34,11 +35,11 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Right Image */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+        <div className="w-full h-[45vh] md:w-1/2 flex justify-center md:justify-end">
           <img
-            src={finance}
+            src={type}
             alt="Finance illustration"
-            className="w-full max-w-sm sm:max-w-md lg:max-w-lg"
+            className="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-3xl shadow-2xl object-cover"
           />
         </div>
       </div>

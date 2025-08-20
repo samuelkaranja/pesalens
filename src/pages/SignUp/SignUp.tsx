@@ -29,7 +29,7 @@ const SignUp: React.FC = () => {
         <form onSubmit={handleSubmit}>
           <FormInput
             label="Full Name"
-            name="name"
+            name="fullname"
             type="text"
             value={formData.fullname}
             onChange={handleChange}
