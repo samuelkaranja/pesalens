@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import FormInput from "../../components/FormInput/FormInput";
 import { Link } from "react-router-dom";
 
+type SignUpFormInputs = {
+  fullname: string;
+  email: string;
+  phone: string;
+  password: string;
+  confirmPassword: string;
+};
+
 const SignUp: React.FC = () => {
-  const [formData, setFormData] = useState({
-    fullname: "",
-    email: "",
-    phone: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<SignUpFormInputs>();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onSubmit: SubmitHandler<SignUpFormInputs> = (data) => {
+    console.log("Sign-Up Data:", data);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Sign-Up Data:", formData);
-  };
+  const passwordValue = watch("password");
 
   return (
     <div className="min-h-[90vh] md:min-h-[85vh] lg:min-h-[85vh] flex items-center justify-center bg-gray-50 px-4">
@@ -26,47 +31,68 @@ const SignUp: React.FC = () => {
         <h2 className="text-2xl font-bold text-emerald-600 mb-6 text-center">
           Create Account
         </h2>
-        <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmit(onSubmit)}>
           <FormInput
             label="Full Name"
-            name="fullname"
             type="text"
-            value={formData.fullname}
-            onChange={handleChange}
-            required
+            {...register("fullname", {
+              required: "Full name is required",
+              minLength: { value: 3, message: "Must be at least 3 characters" },
+            })}
+            error={errors.fullname?.message}
           />
+
           <FormInput
             label="Email"
-            name="email"
             type="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: "Enter a valid email",
+              },
+            })}
+            error={errors.email?.message}
           />
+
           <FormInput
             label="Phone Number"
-            name="phone"
             type="tel"
-            value={formData.phone}
-            onChange={handleChange}
-            required
+            {...register("phone", {
+              required: "Phone number is required",
+              pattern: {
+                value: /^[0-9]{10}$/,
+                message: "Phone number must be 10 digits",
+              },
+            })}
+            error={errors.phone?.message}
           />
+
           <FormInput
             label="Password"
-            name="password"
             type="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
+            {...register("password", {
+              required: "Password is required",
+              minLength: {
+                value: 6,
+                message: "Password must be at least 6 characters",
+              },
+            })}
+            error={errors.password?.message}
           />
+
           <FormInput
             label="Confirm Password"
-            name="confirmPassword"
             type="password"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
+            {...register("confirmPassword", {
+              required: "Please confirm your password",
+              validate: (value) =>
+                value === passwordValue || "Passwords do not match",
+            })}
+            error={errors.confirmPassword?.message}
           />
+
           <button
             type="submit"
             className="w-full bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700 transition-colors"
@@ -74,6 +100,7 @@ const SignUp: React.FC = () => {
             Sign Up
           </button>
         </form>
+
         <p className="mt-4 text-sm text-gray-600 text-center">
           Already have an account?{" "}
           <Link to="/login" className="text-emerald-600 hover:underline">
