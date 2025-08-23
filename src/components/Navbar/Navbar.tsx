@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { scrollToSection } from "../../utils/scrollToSection";
 import { Link } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasShadow, setHasShadow] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setHasShadow(window.scrollY > 0);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { label: "Home", href: "/", type: "link" },
@@ -44,11 +37,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       {/* Navbar */}
-      <nav
-        className={`bg-white w-full z-50 sticky top-0 left-0 transition-shadow duration-300 ${
-          hasShadow ? "shadow" : ""
-        }`}
-      >
+      <nav className="bg-white w-full z-50 sticky top-0 left-0 transition-shadow duration-300 shadow">
         <div className="mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
           {/* Logo */}
           <Link

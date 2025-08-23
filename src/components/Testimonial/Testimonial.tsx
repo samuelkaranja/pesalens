@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import avatar from "../../assets/avatar.svg";
+import background from "../../assets/background.png";
 
 const testimonials = [
   {
@@ -38,7 +39,16 @@ const Testimonial: React.FC = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="bg-gray-50 py-2">
+    <section
+      id="testimonials"
+      className="py-2"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "bottom center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="max-w-3xl mx-auto text-center px-6">
         <h2 className="hidden text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 text-center mb-10">
           Testimonials

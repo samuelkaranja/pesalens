@@ -1,6 +1,6 @@
 import React from "react";
-//import finance from "../../assets/finance.svg";
-import type from "../../assets/typing.jpg";
+import finance from "../../assets/finance.svg";
+//import type from "../../assets/typing.jpg";
 import { scrollToSection } from "../../utils/scrollToSection";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center px-6 sm:px-8 lg:px-16">
         {/* Left Content */}
         <div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
             Track, Understand and Take Control of Your{" "}
             <br className="hidden sm:block" /> M-pesa Spending
           </h1>
@@ -35,11 +35,11 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Right Image */}
-        <div className="w-full h-[45vh] md:w-1/2 flex justify-center md:justify-end">
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <img
-            src={type}
+            src={finance}
             alt="Finance illustration"
-            className="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-3xl shadow-2xl object-cover"
+            className="w-full max-w-sm sm:max-w-md lg:max-w-md"
           />
         </div>
       </div>
