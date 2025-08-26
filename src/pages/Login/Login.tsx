@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import FormInput from "../../components/FormInput/FormInput";
 import { Link } from "react-router-dom";
+import pesalens from "../../assets/PesaLens.png";
 
 type LoginFormInputs = {
   phone: string;
@@ -24,16 +25,17 @@ const Login: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-[80vh] md:min-h-[85vh] lg:min-h-[85vh] flex items-center justify-center bg-gray-50 px-4">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-emerald-600 mb-6 text-center">
-          Login
+    <div className="flex h-screen w-screen">
+      <div className="w-1/2 p-6 max-w-md mx-auto my-auto">
+        <h2 className="text-2xl font-bold text-emerald-600 mb-10 text-center underline">
+          Login To Your Account
         </h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormInput
             label="Phone Number"
             type="tel"
+            placeholder="07********"
             {...register("phone", {
               required: "Phone number is required",
               pattern: {
@@ -47,6 +49,7 @@ const Login: React.FC = () => {
           <FormInput
             label="Password"
             type="password"
+            placeholder="**********"
             {...register("password", {
               required: "Password is required",
               minLength: {
@@ -81,6 +84,16 @@ const Login: React.FC = () => {
           </Link>
         </p>
       </div>
+      <div
+        className="w-1/2 h-full hidden md:block"
+        style={{
+          backgroundImage: `url(${pesalens})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+          filter: "brightness(0.9)",
+        }}
+      ></div>
     </div>
   );
 };
