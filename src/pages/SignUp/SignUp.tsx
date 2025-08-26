@@ -38,7 +38,7 @@ const SignUp: React.FC = () => {
           filter: "brightness(0.9)",
         }}
       ></div>
-      <div className="w-1/2 p-6 max-w-md mx-auto my-auto">
+      <div className="sm:w-1 md:w-1/2 p-6 max-w-md mx-auto my-auto">
         <h2 className="text-2xl font-bold text-emerald-600 mb-10 text-center underline">
           Create Account
         </h2>
