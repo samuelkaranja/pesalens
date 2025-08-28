@@ -2,6 +2,7 @@ import React from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import FormInput from "../../components/FormInput/FormInput";
 import { Link } from "react-router-dom";
+//import pesalens from "../../assets/PesaLens.png";
 import pesalens from "../../assets/PesaLens.png";
 
 type SignUpFormInputs = {
@@ -27,9 +28,10 @@ const SignUp: React.FC = () => {
   const passwordValue = watch("password");
 
   return (
-    <div className="flex h-screen w-screen">
+    <div className="flex min-h-screen w-screen">
+      {/* Left Image Section */}
       <div
-        className="w-1/2 h-full hidden md:block"
+        className="hidden md:block w-1/2 h-screen"
         style={{
           backgroundImage: `url(${pesalens})`,
           backgroundSize: "cover",
@@ -38,8 +40,10 @@ const SignUp: React.FC = () => {
           filter: "brightness(0.9)",
         }}
       ></div>
-      <div className="sm:w-1 md:w-1/2 p-6 max-w-md mx-auto my-auto">
-        <h2 className="text-2xl font-bold text-emerald-600 mb-10 text-center underline">
+
+      {/* Form Section */}
+      <div className="w-full md:w-1/2 px-4 sm:px-8 py-6 max-w-md mx-auto my-auto">
+        <h2 className="text-2xl font-bold text-emerald-600 mb-10 text-left underline">
           Create Account
         </h2>
 

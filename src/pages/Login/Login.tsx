@@ -25,9 +25,10 @@ const Login: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex h-screen w-screen">
-      <div className="sm:w-1 md:w-1/2 p-6 max-w-md mx-auto my-auto">
-        <h2 className="text-2xl font-bold text-emerald-600 mb-10 text-center underline">
+    <div className="flex min-h-screen w-screen">
+      {/* Form Section */}
+      <div className="w-full md:w-1/2 px-4 sm:px-6 py-6 max-w-md mx-auto my-auto">
+        <h2 className="text-2xl font-bold text-emerald-600 mb-10 text-left underline">
           Login To Your Account
         </h2>
 
@@ -84,8 +85,10 @@ const Login: React.FC = () => {
           </Link>
         </p>
       </div>
+
+      {/* Image Section */}
       <div
-        className="w-1/2 h-full hidden md:block"
+        className="hidden md:block w-1/2 h-screen"
         style={{
           backgroundImage: `url(${pesalens})`,
           backgroundSize: "cover",
