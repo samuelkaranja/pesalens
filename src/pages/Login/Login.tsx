@@ -88,12 +88,9 @@ const Login: React.FC = () => {
 
       {/* Image Section */}
       <div
-        className="hidden md:block w-1/2 h-screen"
+        className="hidden md:block w-1/2 h-screen bg-cover bg-center"
         style={{
           backgroundImage: `url(${pesalens})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
           filter: "brightness(0.9)",
         }}
       ></div>

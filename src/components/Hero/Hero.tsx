@@ -40,6 +40,7 @@ const Hero: React.FC = () => {
             src={finance}
             alt="Finance illustration"
             className="w-full max-w-sm sm:max-w-md lg:max-w-md"
+            loading="lazy"
           />
         </div>
       </div>

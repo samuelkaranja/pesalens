@@ -62,6 +62,7 @@ const Testimonial: React.FC = () => {
             className="w-30 h-30 rounded-full object-cover mb-5 mx-auto border-4 border-emerald-500"
             src={testimonials[index].image}
             alt={testimonials[index].name}
+            loading="lazy"
           />
           <p className="text-2xl italic text-[#333] mb-6">
             “{testimonials[index].quote}”

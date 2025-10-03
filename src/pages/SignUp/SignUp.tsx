@@ -2,7 +2,6 @@ import React from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import FormInput from "../../components/FormInput/FormInput";
 import { Link } from "react-router-dom";
-//import pesalens from "../../assets/PesaLens.png";
 import pesalens from "../../assets/PesaLens.png";
 
 type SignUpFormInputs = {
@@ -31,12 +30,9 @@ const SignUp: React.FC = () => {
     <div className="flex min-h-screen w-screen">
       {/* Left Image Section */}
       <div
-        className="hidden md:block w-1/2 h-screen"
+        className="hidden md:block w-1/2 h-screen bg-cover bg-center"
         style={{
           backgroundImage: `url(${pesalens})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
           filter: "brightness(0.9)",
         }}
       ></div>
