@@ -8,6 +8,8 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
+import DashboardLayout from "./layouts/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   useEffect(() => {
@@ -25,6 +27,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/upload-statement" element={<UploadStatement />} />
             <Route path="*" element={<Home />} />
+          </Route>
+
+          <Route element={<DashboardLayout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
           </Route>
 
           <Route element={<AuthLayout />}>
