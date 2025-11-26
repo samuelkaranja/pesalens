@@ -36,7 +36,7 @@ const SideBar: React.FC = () => {
 
         <nav className="flex flex-col gap-6 text-[#414042] text-[16px]">
           <NavLink
-            to="/"
+            to="/dashboard"
             className={({ isActive }) =>
               `${linkBaseStyles} ${
                 isActive ? "text-[#00cb68] font-semibold" : ""
