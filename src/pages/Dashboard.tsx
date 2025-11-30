@@ -13,41 +13,41 @@ const stats = [
 
 const sampleData: Transaction[] = [
   {
-    transactionId: "TXN-001",
+    transactionId: "RKP8N7P3Q6",
     date: "2025-01-12",
-    type: "deposit",
+    type: "Deposit",
     details: "Deposit from M-Pesa",
     amount: 3500,
     status: "Completed",
   },
   {
-    transactionId: "TXN-002",
+    transactionId: "RKP8N7P3Q6",
     date: "2025-01-10",
-    type: "withdrawal",
+    type: "Withdrawal",
     details: "Withdrawal to Card",
     amount: -2000,
     status: "Completed",
   },
   {
-    transactionId: "TXN-003",
+    transactionId: "RKP8N7P3Q6",
     date: "2025-01-05",
-    type: "saving",
+    type: "Saving",
     details: "Monthly Contribution",
     amount: 1500,
     status: "Completed",
   },
   {
-    transactionId: "TXN-004",
+    transactionId: "RKP8N7P3Q6",
     date: "2025-01-12",
-    type: "deposit",
+    type: "Deposit",
     details: "Deposit from M-Pesa",
     amount: 3500,
     status: "Completed",
   },
   {
-    transactionId: "TXN-005",
+    transactionId: "RKP8N7P3Q6",
     date: "2025-01-10",
-    type: "withdrawal",
+    type: "Withdrawal",
     details: "Withdrawal to Card",
     amount: -2000,
     status: "Completed",
@@ -55,7 +55,7 @@ const sampleData: Transaction[] = [
   {
     transactionId: "TXN-006",
     date: "2025-01-05",
-    type: "saving",
+    type: "Saving",
     details: "Monthly Contribution",
     amount: 1500,
     status: "Completed",
@@ -68,7 +68,7 @@ const Dashboard: React.FC = () => {
       <h1 className="text-3xl font-medium">Dashboard</h1>
 
       {/* AmountCards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-7">
         {stats.map((stat, index) => (
           <AmountCard
             key={index}

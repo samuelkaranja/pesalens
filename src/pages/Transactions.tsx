@@ -56,7 +56,7 @@ const Transactions: React.FC = () => {
     <div className="py-2">
       <div className="flex flex-row items-center justify-between mb-10">
         <h1 className="text-3xl font-bold text-gray-900">All Transactions</h1>
-        <button className="flex items-center gap-2 text-sm bg-[#13ec5b] py-2 px-4 rounded-2xl">
+        <button className="flex items-center gap-2 text-sm bg-[#13ec5b] py-2 px-4 rounded-2xl hover:cursor-pointer">
           <Download className="h-4 w-4" />
           Export Data
         </button>

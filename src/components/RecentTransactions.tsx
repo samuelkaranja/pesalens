@@ -6,7 +6,7 @@ export interface Transaction {
   type: string;
   details: string;
   amount: number;
-  status: string;
+  status: "Completed" | "Pending" | "Failed";
 }
 
 interface RecentTransactionsProps {
@@ -14,46 +14,66 @@ interface RecentTransactionsProps {
   transactions: Transaction[];
 }
 
+const statusClasses: Record<Transaction["status"], string> = {
+  Completed: "bg-green-100 text-green-700",
+  Pending: "bg-yellow-100 text-yellow-700",
+  Failed: "bg-red-100 text-red-700",
+};
+
+//<h2 className="text-2xl font-semibold mb-7">{title}</h2>
+
 const RecentTransactions: React.FC<RecentTransactionsProps> = ({
   title = "Recent Activity",
   transactions,
 }) => {
   return (
-    <div className="w-full bg-white p-6 rounded-xl shadow-sm">
+    <div className="bg-white rounded-xl shadow-sm p-4 md:p-6 overflow-x-auto">
       <h2 className="text-2xl font-semibold mb-7">{title}</h2>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full border-collapse">
-          <thead>
-            <tr className="bg-gray-100 text-left">
-              <th className="p-3 font-medium text-gray-600">Transaction ID</th>
-              <th className="p-3 font-medium text-gray-600">Date</th>
-              <th className="p-3 font-medium text-gray-600">Type</th>
-              <th className="p-3 font-medium text-gray-600">Details</th>
-              <th className="p-3 font-medium text-gray-600">Amount</th>
-              <th className="p-3 font-medium text-gray-600">Status</th>
-            </tr>
-          </thead>
+      <table className="w-full text-center border-collapse">
+        <thead className="bg-[#f8fafc]">
+          <tr className="text-gray-600 text-sm">
+            <th className="py-3">TRANSACTION ID</th>
+            <th className="">DATE</th>
+            <th className="">TYPE</th>
+            <th className="">DETAILS</th>
+            <th className="">AMOUNT</th>
+            <th className="">STATUS</th>
+          </tr>
+        </thead>
 
-          <tbody>
-            {transactions.map((tx, index) => (
-              <tr
-                key={index}
-                className="border-b border-gray-300 last:border-b-0 hover:bg-gray-50 transition font-light text-md"
+        <tbody>
+          {transactions.map((item) => (
+            <tr
+              key={item.transactionId}
+              className="border-t-gray-300 text-sm hover:bg-gray-50 hover:cursor-pointer transition"
+            >
+              <td className="py-4">{item.transactionId}</td>
+              <td className="py-3">{item.date}</td>
+              <td className="py-3">{item.type}</td>
+              <td className="py-3 text-gray-700">{item.details}</td>
+              <td
+                className={`py-3 font-medium ${
+                  item.amount < 0 ? "text-red-600" : "text-green-600"
+                }`}
               >
-                <td className="p-3">{tx.transactionId}</td>
-                <td className="p-3">{tx.date}</td>
-                <td className="p-3 capitalize">{tx.type}</td>
-                <td className="p-3">{tx.details}</td>
-                <td className="p-3 font-medium">
-                  KES {tx.amount.toLocaleString()}
-                </td>
-                <td className="p-3">{tx.status}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                {item.amount < 0
+                  ? `- KES ${Math.abs(item.amount)}`
+                  : `+ KES ${item.amount}`}
+              </td>
+              <td className="py-3">
+                <span
+                  className={`px-3 py-1 text-xs rounded-full font-medium ${
+                    statusClasses[item.status]
+                  }`}
+                >
+                  {item.status}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

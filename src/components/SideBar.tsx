@@ -26,7 +26,7 @@ const SideBar: React.FC = () => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-75 bg-white shadow-md z-40 px-5 
+        className={`fixed top-0 left-0 h-full w-70 bg-white shadow-md z-40 px-5 
           transform ${open ? "translate-x-0" : "-translate-x-full"} 
           md:translate-x-0 md:block transition-transform duration-300`}
       >
@@ -34,7 +34,7 @@ const SideBar: React.FC = () => {
           <h1 className="text-3xl font-bold mb-8 mt-5 ml-5">Pesalens</h1>
         </NavLink>
 
-        <nav className="flex flex-col gap-6 text-[#414042] text-[16px]">
+        <nav className="flex flex-col gap-3 text-[#414042] text-[16px]">
           <NavLink
             to="/dashboard"
             className={({ isActive }) =>
