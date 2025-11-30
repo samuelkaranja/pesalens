@@ -7,7 +7,6 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: "Dashboard", href: "/dashboard", type: "link" },
     { label: "Home", href: "/", type: "link" },
     {
       label: "How It Works",
@@ -50,6 +49,14 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Links */}
           <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-small">
+            <li>
+              <Link
+                to="/dashboard"
+                className="flex items-center space-x-1 hover:text-emerald-700 text-sm"
+              >
+                <span>Dashboard</span>
+              </Link>
+            </li>
             {navLinks.map((link) =>
               link.type === "link" ? (
                 <li key={link.label}>
