@@ -13,40 +13,52 @@ const stats = [
 
 const sampleData: Transaction[] = [
   {
+    transactionId: "TXN-001",
     date: "2025-01-12",
-    description: "Deposit from M-Pesa",
     type: "deposit",
+    details: "Deposit from M-Pesa",
     amount: 3500,
+    status: "Completed",
   },
   {
+    transactionId: "TXN-002",
     date: "2025-01-10",
-    description: "Withdrawal to Card",
     type: "withdrawal",
+    details: "Withdrawal to Card",
     amount: -2000,
+    status: "Completed",
   },
   {
+    transactionId: "TXN-003",
     date: "2025-01-05",
-    description: "Monthly Contribution",
     type: "saving",
+    details: "Monthly Contribution",
     amount: 1500,
+    status: "Completed",
   },
   {
+    transactionId: "TXN-004",
     date: "2025-01-12",
-    description: "Deposit from M-Pesa",
     type: "deposit",
+    details: "Deposit from M-Pesa",
     amount: 3500,
+    status: "Completed",
   },
   {
+    transactionId: "TXN-005",
     date: "2025-01-10",
-    description: "Withdrawal to Card",
     type: "withdrawal",
+    details: "Withdrawal to Card",
     amount: -2000,
+    status: "Completed",
   },
   {
+    transactionId: "TXN-006",
     date: "2025-01-05",
-    description: "Monthly Contribution",
     type: "saving",
+    details: "Monthly Contribution",
     amount: 1500,
+    status: "Completed",
   },
 ];
 
