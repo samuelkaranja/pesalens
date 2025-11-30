@@ -7,6 +7,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
+    { label: "Dashboard", href: "/dashboard", type: "link" },
     { label: "Home", href: "/", type: "link" },
     {
       label: "How It Works",

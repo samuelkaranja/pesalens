@@ -12,7 +12,7 @@ const SideBar: React.FC = () => {
   const [open, setOpen] = useState();
 
   const linkBaseStyles =
-    "hover:bg-[#eafaf1] rounded-lg py-3 px-5 flex items-center gap-3";
+    "hover:bg-[#eafaf1] rounded-lg py-3 px-5 flex items-center gap-2";
 
   return (
     <>
