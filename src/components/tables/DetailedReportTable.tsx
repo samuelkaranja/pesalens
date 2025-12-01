@@ -1,5 +1,4 @@
 import React from "react";
-import { SlidersHorizontal } from "lucide-react";
 
 const data = [
   { category: "Transport", transactions: 42, inflow: 0, outflow: 34000 },
@@ -11,17 +10,14 @@ const data = [
 
 const DetailedReportTable: React.FC = () => {
   return (
-    <div className="bg-white p-5 rounded-xl shadow-sm border">
+    <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-300">
       <div className="flex justify-between mb-4">
         <p className="font-semibold">Detailed Report Data</p>
-        <button className="flex items-center text-sm gap-1 border px-3 py-1 rounded">
-          <SlidersHorizontal size={15} /> Columns
-        </button>
       </div>
 
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b text-gray-600">
+          <tr className="border-b border-b-gray-300 text-gray-600 bg-[#f7f8fa]">
             <th className="py-2 text-left">Category</th>
             <th>Transactions</th>
             <th>Total Inflow</th>
@@ -35,8 +31,8 @@ const DetailedReportTable: React.FC = () => {
             const net = row.inflow - row.outflow;
 
             return (
-              <tr key={i} className="border-b">
-                <td className="py-2">{row.category}</td>
+              <tr key={i} className="border-b border-b-gray-300">
+                <td className="py-3">{row.category}</td>
                 <td className="text-center">{row.transactions}</td>
                 <td className="text-green-600 text-center">
                   {row.inflow === 0 ? "KES 0.00" : `KES ${row.inflow}`}
@@ -58,7 +54,7 @@ const DetailedReportTable: React.FC = () => {
         </tbody>
       </table>
 
-      <div className="flex justify-between mt-4 text-sm text-gray-600">
+      <div className="flex items-center justify-between mt-4 text-sm text-gray-600">
         <p>Showing 1 to 5 of 12 categories</p>
 
         <div className="flex gap-2">
