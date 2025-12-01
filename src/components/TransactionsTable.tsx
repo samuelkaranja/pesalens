@@ -49,27 +49,33 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
         </div>
 
         <div className="flex gap-4">
-          <select
-            value={typeFilter}
-            onChange={(e) => setTypeFilter(e.target.value)}
-            className="bg-white border rounded-lg px-4 py-2 text-sm"
-          >
-            <option>All</option>
-            <option>Paybill</option>
-            <option>Send Money</option>
-            <option>Buy Goods</option>
-            <option>Deposit</option>
-          </select>
+          <div>
+            <label className="text-sm text-gray-600 pr-2">Type:</label>
+            <select
+              value={typeFilter}
+              onChange={(e) => setTypeFilter(e.target.value)}
+              className="bg-white border border-gray-300 shadow rounded-lg p-2 text-sm"
+            >
+              <option>All</option>
+              <option>Paybill</option>
+              <option>Send Money</option>
+              <option>Buy Goods</option>
+              <option>Deposit</option>
+            </select>
+          </div>
 
-          <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-            className="bg-white border rounded-lg px-4 py-2 text-sm"
-          >
-            <option>All</option>
-            <option>Completed</option>
-            <option>Failed</option>
-          </select>
+          <div>
+            <label className="text-sm text-gray-600 pr-2">Status:</label>
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+              className="bg-white border border-gray-300 shadow rounded-lg p-2 text-sm"
+            >
+              <option>All</option>
+              <option>Completed</option>
+              <option>Failed</option>
+            </select>
+          </div>
 
           <button
             onClick={() => {
