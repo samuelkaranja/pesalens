@@ -11,8 +11,8 @@ import DetailedReportTable from "../components/tables/DetailedReportTable";
 
 const Analytics: React.FC = () => {
   return (
-    <div className="p-6 w-full">
-      <div className="flex items-center justify-between mb-6">
+    <div className="py-1 w-full">
+      <div className="flex items-center justify-between mb-8">
         <h1 className="text-2xl font-semibold">Reports & Analytics</h1>
 
         <div className="flex items-center gap-3">
