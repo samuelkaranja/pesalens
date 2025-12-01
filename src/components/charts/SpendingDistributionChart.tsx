@@ -2,7 +2,7 @@ import React from "react";
 
 const SpendingDistributionChart: React.FC = () => {
   return (
-    <div className="bg-white p-5 rounded-xl shadow-sm border">
+    <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-300">
       <p className="font-semibold mb-4">Spending Distribution</p>
 
       <div className="flex flex-col items-center">

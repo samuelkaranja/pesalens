@@ -2,7 +2,7 @@ import React from "react";
 
 const VolumeTrendChart: React.FC = () => {
   return (
-    <div className="bg-white p-5 rounded-xl shadow-sm border">
+    <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-300">
       <div className="flex justify-between mb-3">
         <p className="font-semibold">Transaction Volume Trend</p>
         <span className="text-xs bg-gray-100 px-2 py-1 rounded">KES</span>
