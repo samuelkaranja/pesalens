@@ -1,6 +1,5 @@
 import React from "react";
 import { FaFileUpload, FaSearchDollar, FaFilePdf } from "react-icons/fa";
-import background from "../../assets/background.png";
 
 const Steps: React.FC = () => {
   const steps = [
@@ -25,16 +24,7 @@ const Steps: React.FC = () => {
   ];
 
   return (
-    <section
-      id="how-it-works"
-      className="bg-gray-50 py-20"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section id="how-it-works" className="bg-[#f6f8f6] py-20">
       <div className="container mx-auto px-6 md:px-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           How It Works

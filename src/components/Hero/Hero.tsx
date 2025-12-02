@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-white py-12 md:py-20">
+    <section className="bg-[#f6f8f6] py-12 md:py-20">
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center px-6 sm:px-8 lg:px-16">
         {/* Left Content */}
         <div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
