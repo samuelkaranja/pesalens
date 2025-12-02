@@ -1,74 +1,74 @@
-import React, { useState, useEffect } from "react";
-import avatar from "../../assets/avatar.svg";
-import background from "../../assets/background.png";
-
-const testimonials = [
-  {
-    image: avatar,
-    name: "Jane Mwangi",
-    role: "Small Business Owner",
-    quote:
-      "Pesalens has completely transformed the way I track my spending. I now understand exactly where my M-pesa money goes every month.",
-  },
-  {
-    image: avatar,
-    name: "John Otieno",
-    role: "Freelancer",
-    quote:
-      "Before Pesalens, I had no idea how much I was overspending. Now I can set better budgets and stick to them.",
-  },
-  {
-    image: avatar,
-    name: "Mary Wanjiku",
-    role: "Student",
-    quote:
-      "I love how easy it is to upload my statements and see my expenses broken down instantly.",
-  },
-];
+import React from "react";
+import User from "../../assets/code.jpg";
 
 const Testimonial: React.FC = () => {
-  const [index, setIndex] = useState(0);
-
-  // Auto-rotate every 10 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-    }, 10000);
-
-    return () => clearInterval(interval); // cleanup on unmount
-  }, []);
-
   return (
-    <section
-      id="testimonials"
-      className="py-2"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "bottom center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div className="max-w-3xl mx-auto text-center px-6">
-        <h2 className="hidden text-3xl sm:text-4xl lg:text-4xl font-bold text-gray-900 text-center mb-10">
-          Testimonials
-        </h2>
+    <section className="py-15 max-w-7xl mx-auto">
+      <div className="text-center mb-10">
+        <h1 className="text-3xl md:text-4xl text-black font-medium pb-3">
+          Loved by users everywhere
+        </h1>
+        <p className="text-sm md:text-lg font-light text-black">
+          See what our early adopters have to say about their experience with
+          Pesalens
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="border border-gray-200 rounded-xl p-5 w-85 md:w-95 shadow">
+          <h1 className="pb-6 border-b border-gray-200 leading-relaxed">
+            "Finally, an easy way to see where my M-pesa float goes!. Pesalens
+            is a game-changer for my personal budgeting."
+          </h1>
 
-        <div
-          className="p-10 rounded-lg transition-all duration-500 ease-in-out"
-          key={index} // key ensures animation reset when changing
-        >
-          <img
-            className="w-30 h-30 rounded-full object-cover mb-5 mx-auto border-4 border-emerald-500"
-            src={testimonials[index].image}
-            alt={testimonials[index].name}
-            loading="lazy"
-          />
-          <p className="text-2xl italic text-[#333] mb-6">
-            “{testimonials[index].quote}”
-          </p>
-          <h3 className="text-xl font-semibold">{testimonials[index].name}</h3>
-          <p className="text-sm text-gray-500">{testimonials[index].role}</p>
+          <div className="pt-3 flex flex-row items-center">
+            <img
+              src={User}
+              alt=""
+              className="w-12 h-12 object-contain rounded-full mr-3"
+            />
+            <span>
+              <p>Jane Doe</p>
+              <p>Freelance Designer</p>
+            </span>
+          </div>
+        </div>
+
+        <div className="border border-gray-200 rounded-xl p-5 w-85 md:w-95 shadow">
+          <h1 className="pb-6 border-b border-gray-200 leading-relaxed">
+            "The insights are invaluable. I quickly identified areas where I was
+            overspending and made adjustments. Highly recommend!"
+          </h1>
+
+          <div className="pt-3 flex flex-row items-center">
+            <img
+              src={User}
+              alt=""
+              className="w-12 h-12 object-contain rounded-full mr-3"
+            />
+            <span>
+              <p>Jane Doe</p>
+              <p>Freelance Designer</p>
+            </span>
+          </div>
+        </div>
+
+        <div className="border border-gray-200 rounded-xl p-5 w-85 md:w-95 shadow">
+          <h1 className="pb-6 border-b border-gray-200 leading-relaxed">
+            "The automatic categorization is brilliant. I've saved so much time
+            and now have a real sense of control over my finances."
+          </h1>
+
+          <div className="pt-3 flex flex-row items-center">
+            <img
+              src={User}
+              alt=""
+              className="w-12 h-12 object-contain rounded-full mr-3"
+            />
+            <span>
+              <p>Jane Doe</p>
+              <p>Freelance Designer</p>
+            </span>
+          </div>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { scrollToSection } from "../../utils/scrollToSection";
 import { Link } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
+import Logo from "../../assets/Logo Images/new.png";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,13 +43,13 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-3xl font-bold text-emerald-900 italic underline"
+            className="text-3xl font-bold text-emerald-900 italic underline w-40"
           >
-            Pesalens
+            <img src={Logo} className="object-contain" />
           </Link>
 
           {/* Desktop Links */}
-          <ul className="hidden md:flex items-center space-x-6 text-gray-700 font-small">
+          <ul className="hidden md:flex items-center justify-center space-x-6 text-gray-700 font-small">
             <li>
               <Link
                 to="/dashboard"
