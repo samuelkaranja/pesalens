@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
 
           {/* Center Navigation (Desktop only) */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
-            <ul className="flex items-center space-x-6 bg-[#f5f6f8] px-8 py-3 rounded-lg shadow-sm">
+            <ul className="flex items-center space-x-6 bg-[#f5f6f8] px-8 py-3 rounded-full shadow-sm">
               {/* Dashboard */}
               <li>
                 <Link

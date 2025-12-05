@@ -1,6 +1,5 @@
 import React from "react";
 import finance from "../../assets/finance.svg";
-//import type from "../../assets/typing.jpg";
 import { scrollToSection } from "../../utils/scrollToSection";
 import { Link } from "react-router-dom";
 
@@ -12,7 +11,7 @@ const Hero: React.FC = () => {
         <div className="w-full md:w-1/2 text-center md:text-left mt-8 md:mt-0">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
             Track, Understand and Take Control of Your{" "}
-            <br className="hidden sm:block" /> M-pesa Spending
+            <br className="hidden sm:block" /> M-Pesa Spending
           </h1>
           <p className="mt-4 text-[#333] text-base sm:text-lg lg:text-lg max-w-lg mx-auto md:mx-0">
             Upload your M-pesa statements and instantly see a detailed breakdown

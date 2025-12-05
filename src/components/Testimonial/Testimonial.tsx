@@ -13,7 +13,7 @@ const Testimonial: React.FC = () => {
           Pesalens
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 justify-items-center">
         <div className="border border-gray-200 rounded-xl p-5 w-85 md:w-95 shadow bg-white">
           <h1 className="pb-6 border-b border-gray-200 leading-relaxed">
             "Finally, an easy way to see where my M-pesa float goes!. Pesalens

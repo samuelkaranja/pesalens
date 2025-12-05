@@ -25,7 +25,7 @@ const Steps: React.FC = () => {
 
   return (
     <section id="how-it-works" className="bg-[#f6f8f6] py-20">
-      <div className="container mx-auto px-6 md:px-12 text-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           How It Works
         </h2>
@@ -41,20 +41,19 @@ const Steps: React.FC = () => {
               className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
             >
               {/* Icon + Badge Container */}
-              <div className="relative flex justify-center mb-4">
-                {/* <span className="absolute -top-3 -right-3 bg-emerald-600 text-white text-sm font-bold w-8 h-8 flex items-center justify-center rounded-full shadow-lg animate-bounce">
-                  {index + 1}
-                </span> */}
+              <div className="relative flex justify-center mb-5">
                 {step.icon}
               </div>
 
               {/* Step Title */}
-              <h3 className="text-lg font-semibold text-[#333]">
+              <h3 className="text-xl font-semibold text-[#333] mb-3">
                 {step.title}
               </h3>
 
               {/* Step Description */}
-              <p className="mt-2 text-gray-600 text-sm">{step.description}</p>
+              <p className="mt-2 text-gray-600 text-md leading-normal">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>

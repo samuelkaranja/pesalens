@@ -2,7 +2,7 @@ import React from "react";
 
 const WelcomeCard: React.FC = () => {
   return (
-    <section className="max-w-7xl mx-auto my-15">
+    <section className="max-w-7xl mx-auto my-20">
       <div className="bg-[#cdf6cd] text-center p-8 rounded-2xl">
         <h1 className="text-4xl text-black pb-6">
           Ready to master your M-Pesa finances?
