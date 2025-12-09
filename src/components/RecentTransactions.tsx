@@ -20,19 +20,17 @@ const statusClasses: Record<Transaction["status"], string> = {
   Failed: "bg-red-100 text-red-700",
 };
 
-//<h2 className="text-2xl font-semibold mb-7">{title}</h2>
-
 const RecentTransactions: React.FC<RecentTransactionsProps> = ({
   title = "Recent Activity",
   transactions,
 }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm p-4 md:p-6 overflow-x-auto">
-      <h2 className="text-2xl font-semibold mb-7">{title}</h2>
+      <h2 className="text-2xl font-semibold mb-8">{title}</h2>
 
-      <table className="w-full text-center border-collapse">
+      <table className="w-full min-w-[850px] md:min-w-full border-collapse">
         <thead className="bg-[#f8fafc]">
-          <tr className="text-gray-600 text-sm">
+          <tr className="text-gray-600 text-sm text-left">
             <th className="py-3">TRANSACTION ID</th>
             <th className="">DATE</th>
             <th className="">TYPE</th>

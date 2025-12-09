@@ -65,10 +65,10 @@ const sampleData: Transaction[] = [
 const Dashboard: React.FC = () => {
   return (
     <div className="py-1">
-      <h1 className="text-3xl font-medium">Dashboard</h1>
+      <h1 className="text-4xl font-medium">Dashboard</h1>
 
       {/* AmountCards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 place-items-center md:place-items-start">
         {stats.map((stat, index) => (
           <AmountCard
             key={index}
@@ -80,7 +80,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* RecentTransactions */}
-      <div className="mt-10">
+      <div className="mt-15">
         <RecentTransactions transactions={sampleData} />
       </div>
     </div>

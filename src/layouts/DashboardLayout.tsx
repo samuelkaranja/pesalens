@@ -4,10 +4,10 @@ import SideBar from "../components/SideBar";
 
 const DashboardLayout: React.FC = () => {
   return (
-    <div className="min-h-screen flex bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <SideBar />
-      <main className="flex-1 p-4 md:ml-50">
-        <div className="max-w-[1050px] mx-auto">
+      <main className="px-12 py-6 md:ml-[300px] transition-all">
+        <div className="w-full max-w-[1600px] mx-auto">
           <Outlet />
         </div>
       </main>
