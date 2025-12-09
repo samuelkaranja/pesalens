@@ -20,7 +20,11 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
   const [typeFilter, setTypeFilter] = useState("All");
   const [statusFilter, setStatusFilter] = useState("All");
 
-  // Filtered transactions based on search and filters
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const recordsPerPage = 10;
+
+  // Filter Data
   const filteredData = data.filter((t) => {
     const matchesSearch =
       t.id.toLowerCase().includes(searchText.toLowerCase()) ||
@@ -33,17 +37,33 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
     return matchesSearch && matchesType && matchesStatus;
   });
 
+  // Pagination logic
+  const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+
+  const paginatedData = filteredData.slice(
+    (currentPage - 1) * recordsPerPage,
+    currentPage * recordsPerPage
+  );
+
+  const goToPage = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
+
   return (
     <>
+      {/* Search & Filters */}
       <div className="bg-white rounded-xl shadow-md border-gray-300 flex flex-wrap items-center justify-between gap-4 mt-5 p-3">
-        {/* Search + Filters */}
         <div className="flex items-center bg-gray-50 border-gray-800 rounded-lg px-4 py-3 w-full md:w-100">
           <Search className="h-4 w-4 text-gray-400" />
           <input
             type="text"
             placeholder="Search by ID, type, or details..."
             value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              setCurrentPage(1); // reset pagination on search
+            }}
             className="ml-2 w-full outline-none text-sm bg-transparent"
           />
         </div>
@@ -53,7 +73,10 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
             <label className="text-sm text-gray-600 pr-2">Type:</label>
             <select
               value={typeFilter}
-              onChange={(e) => setTypeFilter(e.target.value)}
+              onChange={(e) => {
+                setTypeFilter(e.target.value);
+                setCurrentPage(1);
+              }}
               className="bg-white border border-gray-300 shadow rounded-lg p-2 text-sm"
             >
               <option>All</option>
@@ -68,7 +91,10 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
             <label className="text-sm text-gray-600 pr-2">Status:</label>
             <select
               value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
+              onChange={(e) => {
+                setStatusFilter(e.target.value);
+                setCurrentPage(1);
+              }}
               className="bg-white border border-gray-300 shadow rounded-lg p-2 text-sm"
             >
               <option>All</option>
@@ -82,6 +108,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
               setSearchText("");
               setTypeFilter("All");
               setStatusFilter("All");
+              setCurrentPage(1);
             }}
             className="text-green-600 text-sm font-medium hover:cursor-pointer hover:underline"
           >
@@ -90,9 +117,9 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-md border-gray-300 mt-3 p-4">
-        {/* Table */}
-        <table className="w-full text-left">
+      {/* TABLE */}
+      <div className="bg-white rounded-xl shadow-md border-gray-300 mt-3 p-4 overflow-x-auto">
+        <table className="w-full text-left min-w-[750px]">
           <thead className="text-gray-500 text-sm border-b-gray-400 bg-[#f6f8f6]">
             <tr>
               <th className="py-4 px-4 font-medium">Transaction ID</th>
@@ -105,10 +132,10 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
           </thead>
 
           <tbody className="text-gray-700 text-sm">
-            {filteredData.map((t, idx) => (
+            {paginatedData.map((t) => (
               <tr
-                key={idx}
-                className="border-b-gray-400 hover:bg-gray-50 hover:cursor-pointer transition"
+                key={t.id}
+                className="border-b-gray-200 border-b hover:bg-gray-50 transition cursor-pointer"
               >
                 <td className="py-4 px-4 font-medium">{t.id}</td>
                 <td className="py-4 px-4">
@@ -132,6 +159,55 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({ data }) => {
             ))}
           </tbody>
         </table>
+
+        {/* PAGINATION */}
+        <div className="flex justify-between items-center mt-5">
+          {/* Previous Button */}
+          <button
+            onClick={() => goToPage(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 rounded-lg border text-sm ${
+              currentPage === 1
+                ? "opacity-40 cursor-not-allowed"
+                : "hover:bg-gray-100"
+            }`}
+          >
+            Previous
+          </button>
+
+          {/* Page Numbers */}
+          <div className="flex gap-2">
+            {[...Array(totalPages)].map((_, i) => {
+              const page = i + 1;
+              return (
+                <button
+                  key={page}
+                  onClick={() => goToPage(page)}
+                  className={`px-3 py-1 rounded-lg text-sm border ${
+                    currentPage === page
+                      ? "bg-green-600 text-white border-green-600"
+                      : "hover:bg-gray-100"
+                  }`}
+                >
+                  {page}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={() => goToPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className={`px-4 py-2 rounded-lg border text-sm ${
+              currentPage === totalPages
+                ? "opacity-40 cursor-not-allowed"
+                : "hover:bg-gray-100"
+            }`}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </>
   );
