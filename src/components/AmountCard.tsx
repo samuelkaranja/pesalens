@@ -15,7 +15,7 @@ const AmountCard: React.FC<AmountCardProps> = ({
   const isPositive = percentage >= 0;
 
   return (
-    <div className="p-6 bg-white rounded-2xl shadow-lg w-72 min-h-[160px] hover: cursor-pointer">
+    <div className="p-6 bg-white rounded-2xl shadow-lg w-85 md:w-72 min-h-[170px] hover: cursor-pointer">
       <span className="text-lg text-gray-500 font-light text-md mt-3">
         {title}
       </span>
