@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between border border-gray-200 shadow rounded-lg relative bg-white">
           {/* Logo (Left) */}
           <Link to="/" className="w-32">
-            <img src={Logo} className="object-contain" />
+            <img src={Logo} className="object-contain" alt="Logo" />
           </Link>
 
           {/* Center Navigation (Desktop only) */}

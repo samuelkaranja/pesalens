@@ -7,6 +7,7 @@ import {
   BarChart3,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import Logo from "../assets/Logo Images/new.png";
 
 const SideBar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -31,7 +32,7 @@ const SideBar: React.FC = () => {
           md:translate-x-0 md:block transition-transform duration-300`}
       >
         <NavLink to="/">
-          <h1 className="text-3xl font-bold mb-8 mt-8 ml-5">Pesalens</h1>
+          <img src={Logo} className="w-45 mb-8 mt-8" />
         </NavLink>
 
         <nav className="flex flex-col gap-3 text-[#414042] text-[16px]">
