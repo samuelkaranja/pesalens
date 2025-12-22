@@ -75,10 +75,10 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Login (Right for Desktop) */}
-          <div className="hidden md:flex items-center bg-[#2bee2b] py-2 px-4 rounded-full">
+          <div className="hidden md:flex items-center bg-emerald-600 py-2 px-4 rounded-full">
             <Link
               to="/login"
-              className="flex items-center space-x-1 hover:text-emerald-700 text-sm"
+              className="flex items-center space-x-1 text-white text-sm"
             >
               <FiLogIn className="w-4 h-4" />
               <span>Login</span>

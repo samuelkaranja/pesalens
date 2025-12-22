@@ -8,13 +8,13 @@ const Testimonial: React.FC = () => {
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 pb-3">
           Loved by users everywhere
         </h1>
-        <p className="text-sm md:text-lg font-light text-black">
+        <p className="text-md md:text-lg md:font-light text-black">
           See what our early adopters have to say about their experience with
           Pesalens
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 justify-items-center">
-        <div className="border border-gray-200 rounded-xl p-5 w-85 md:w-95 shadow bg-white">
+        <div className="border border-gray-200 rounded-xl p-5 w-95 shadow bg-white">
           <h1 className="pb-6 border-b border-gray-200 leading-loose">
             "Finally, an easy way to see where my M-pesa float goes!. Pesalens
             is a game-changer for my personal budgeting."
@@ -33,7 +33,7 @@ const Testimonial: React.FC = () => {
           </div>
         </div>
 
-        <div className="border border-gray-200 rounded-xl p-5 w-85 md:w-95 shadow bg-white">
+        <div className="border border-gray-200 rounded-xl p-5 w-95 shadow bg-white">
           <h1 className="pb-6 border-b border-gray-200 leading-loose">
             "The insights are invaluable. I quickly identified areas where I was
             overspending and made adjustments. Highly recommend!"
@@ -52,7 +52,7 @@ const Testimonial: React.FC = () => {
           </div>
         </div>
 
-        <div className="border border-gray-200 rounded-xl p-5 w-85 md:w-95 shadow bg-white">
+        <div className="border border-gray-200 rounded-xl p-5 w-95 shadow bg-white">
           <h1 className="pb-6 border-b border-gray-200 leading-loose">
             "The automatic categorization is brilliant. I've saved so much time
             and now have a real sense of control over my finances."
