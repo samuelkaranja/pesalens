@@ -26,7 +26,7 @@ const RecentTransactions: React.FC<RecentTransactionsProps> = ({
 }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm p-4 md:p-6 overflow-x-auto">
-      <h2 className="text-2xl font-semibold mb-8">{title}</h2>
+      <h2 className="text-3xl font-semibold mb-8">{title}</h2>
 
       <table className="w-full min-w-[850px] md:min-w-full border-collapse">
         <thead className="bg-[#f8fafc]">

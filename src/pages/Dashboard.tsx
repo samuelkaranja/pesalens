@@ -21,7 +21,7 @@ const sampleData: Transaction[] = [
     status: "Completed",
   },
   {
-    transactionId: "RKP8N7P3Q6",
+    transactionId: "RKP8N7P3Q7",
     date: "2025-01-10",
     type: "Withdrawal",
     details: "Withdrawal to Card",
@@ -29,7 +29,7 @@ const sampleData: Transaction[] = [
     status: "Completed",
   },
   {
-    transactionId: "RKP8N7P3Q6",
+    transactionId: "RKP8N7P3Q8",
     date: "2025-01-05",
     type: "Saving",
     details: "Monthly Contribution",
@@ -37,7 +37,7 @@ const sampleData: Transaction[] = [
     status: "Completed",
   },
   {
-    transactionId: "RKP8N7P3Q6",
+    transactionId: "RKP8N7P3Q9",
     date: "2025-01-12",
     type: "Deposit",
     details: "Deposit from M-Pesa",
@@ -45,7 +45,7 @@ const sampleData: Transaction[] = [
     status: "Completed",
   },
   {
-    transactionId: "RKP8N7P3Q6",
+    transactionId: "RKP8N7P3Q10",
     date: "2025-01-10",
     type: "Withdrawal",
     details: "Withdrawal to Card",
@@ -53,7 +53,7 @@ const sampleData: Transaction[] = [
     status: "Completed",
   },
   {
-    transactionId: "TXN-006",
+    transactionId: "RKP8N7P3Q11",
     date: "2025-01-05",
     type: "Saving",
     details: "Monthly Contribution",
@@ -65,10 +65,10 @@ const sampleData: Transaction[] = [
 const Dashboard: React.FC = () => {
   return (
     <div className="mt-10">
-      <h1 className="text-4xl font-medium">Dashboard</h1>
+      <h1 className="text-4xl font-medium ml-7">Dashboard</h1>
 
       {/* AmountCards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 place-items-center md:place-items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 justify-items-center md:justify-items-start">
         {stats.map((stat, index) => (
           <AmountCard
             key={index}
@@ -80,7 +80,7 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* RecentTransactions */}
-      <div className="mt-15">
+      <div className="mt-10 w-full max-w-none">
         <RecentTransactions transactions={sampleData} />
       </div>
     </div>
