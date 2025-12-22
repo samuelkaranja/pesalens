@@ -64,8 +64,8 @@ const sampleData: Transaction[] = [
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="mt-10">
-      <h1 className="text-4xl font-medium ml-7">Dashboard</h1>
+    <div className="mt-10 md:mt-2">
+      <h1 className="text-4xl font-medium ml-7 md:ml-1">Dashboard</h1>
 
       {/* AmountCards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 justify-items-center md:justify-items-start">

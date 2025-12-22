@@ -135,9 +135,11 @@ const transactions: Transaction[] = [
 const Transactions: React.FC = () => {
   return (
     <div className="py-2">
-      <div className="flex flex-col md:flex-row items-center md:justify-between mb-10">
-        <h1 className="text-4xl font-bold text-gray-900">All Transactions</h1>
-        <button className="flex items-center gap-2 text-sm bg-[#13ec5b] py-2 px-4 rounded-2xl hover:cursor-pointer mt-4">
+      <div className="flex flex-row items-center justify-between mt-10 md:mt-2 mb-10">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+          All Transactions
+        </h1>
+        <button className="flex items-center gap-2 text-sm bg-[#13ec5b] py-2 px-1 md:px-4 rounded-2xl hover:cursor-pointer">
           <Download className="h-4 md:w-4" />
           Export Data
         </button>
